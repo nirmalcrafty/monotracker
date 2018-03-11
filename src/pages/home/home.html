@@ -1,0 +1,19 @@
+<ion-content padding>
+  <h2>Welcome to MonoTracker !</h2>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-thumbnail *ngIf="item.data.thumbnail" item-left>
+        <img src="{{item.data.thumbnail}}">
+      </ion-thumbnail>
+      <h2>{{item.data.title}}</h2>
+      <p>
+        <ion-icon name="thumbs-up">
+          {{item.data.score}}
+        </ion-icon>
+      </p>
+      <button ion-button clear item-right (click)="viewItem(item.data)">View</button>
+    </ion-item>
+  </ion-list>
+  <button ion-button block color="light" class="marginTop" (click)="logout()">Logout</button>
+
+</ion-content>
